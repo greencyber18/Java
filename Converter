@@ -1,0 +1,93 @@
+interface Measurement
+{
+     
+      public double ConvertCmtoInches();
+      public void ConvertMiletoKm();
+      public void ConvertGmtoKg();
+}
+
+
+public class Demo implements Measurement
+{
+
+private double Km;
+private double Cm;
+private double Kg;
+private double Inches;
+private double Mile;
+private double Gm;
+
+public Demo(double c,double m,double g)
+{
+
+Cm=c;
+
+
+Mile=m;
+Gm=g;
+}
+
+
+public double ConvertCmtoInches()
+{
+Inches=Cm*0.393701;
+
+
+return Inches;
+} 
+
+public double ConvertMiletoKm()
+{
+
+Km=Mile/0.612;
+
+return Km;
+}
+
+public double ConvertGmtoKg()
+{
+
+Kg=Gm/1000;
+
+return Kg;
+}
+
+public double getCm()
+{
+return Cm;
+}
+
+public double getMile()
+{
+return Mile;
+}
+
+public double getGm()
+{
+return Gm;
+}
+
+}
+
+public class Main
+{ 
+
+ public static void main(String args[])
+   {
+	Demo obj = new Demo(5000,4000,30530);
+	
+      
+       System.out.println(obj.getCm() + " Centimeters " + "equals to " + obj.ConvertCmtoInches() + " Inches ");
+
+
+       System.out.println(obj.getMile() + " Miles " + "equals to " + obj.ConvertMiletoKm() + " Killometers ");
+
+
+       System.out.println(obj.getGm() + " Grams " + "equals to " + obj.ConvertGmtoKg() + " Killograms ");
+        
+
+      
+
+
+   }
+}
